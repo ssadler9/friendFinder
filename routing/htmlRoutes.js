@@ -21,8 +21,10 @@ app.get("/public/survey", function(req, res){
 // Need to store the answers from /public/survery into answers array
 app.post("/public/survey", function (req, res){
 	var friend = req.body;
-	console.log(friend);
-})
+	answers.push(friend);
+	console.log(answers);
+	res.end();
+});
 // Match that with the friends from app/data/friends.js
 // Display information in Module
 
