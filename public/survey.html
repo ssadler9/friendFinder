@@ -156,6 +156,7 @@ $('#submitButton').on('click', function(event){
 		q9: $('#q9').val().trim(),
 		q10: $('#q10').val().trim()
 	}
+
 	console.log(profile);
 
 		$.post('/public/survey', profile)
@@ -168,16 +169,16 @@ $('#submitButton').on('click', function(event){
 			alert("You have no friends")
 		};
 
-			$('#q1').val('')
-			$('#q2').val('')
-			$('#q3').val('')
-			$('#q4').val('')
-			$('#q5').val('')
-			$('#q6').val('')
-			$('#q7').val('')
-			$('#q8').val('')
-			$('#q9').val('')
-			$('#q10').val('')
+			$('#q1').val()
+			$('#q2').val()
+			$('#q3').val()
+			$('#q4').val()
+			$('#q5').val()
+			$('#q6').val()
+			$('#q7').val()
+			$('#q8').val()
+			$('#q9').val()
+			$('#q10').val()
 		})
 });
 

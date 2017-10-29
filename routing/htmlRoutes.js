@@ -4,6 +4,8 @@ var bodyParser = require('body-parser');
 var app = express();
 var PORT = process.env.PORT || 3000;
 var path = require('path');
+var friends = require('../app/data/friends.js');
+var totalDifference = 0;
 
 
 // Arrays for answers
@@ -23,7 +25,8 @@ app.get("/public/survey", function(req, res){
 app.post("/public/survey", function (req, res){
 	var friend = req.body;
 	answers.push(friend);
-	console.log(answers);
+	comparison();
+	// console.log(answers);
 	res.end();
 });
 // Match that with the friends from app/data/friends.js
@@ -33,3 +36,13 @@ app.post("/public/survey", function (req, res){
 app.listen(PORT, function(){
 	console.log("App is listening on POT " + PORT);
 });
+
+function comparison(){
+	console.log(answers);
+	for (var i = 0; i < friends.length; i++) {
+		console.log(friends[i].scores);
+	}
+}
+
+
+
