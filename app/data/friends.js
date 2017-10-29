@@ -1,4 +1,4 @@
- var hunter = {
+var friendsArray = [{
  	name: "Hunter",
  	photo: "",
  	scores: [
@@ -13,9 +13,8 @@
  		1,
  		4,
  	]
- };
-
-  var ryan = {
+ },
+ {
  	name: "ryan",
  	photo: "",
  	scores: [
@@ -30,10 +29,9 @@
  		5,
  		2,
  	]
- };
-
-  var setu = {
- 	name: "sunter",
+ },
+ {
+ 	name: "setu",
  	photo: "",
  	scores: [
  		5,
@@ -47,9 +45,8 @@
  		2,
  		2,
  	]
- };
-
- var trent = {
+ },
+ {
  	name: "trent",
  	photo: "",
  	scores: [
@@ -64,9 +61,8 @@
  		5,
  		5,
  	]
- };
-
- var cory = {
+ },
+ {
  	name: "cory",
  	photo: "",
  	scores: [
@@ -81,4 +77,7 @@
  		3,
  		2,
  	]
- };
+}];
+
+module.exports = friendsArray;
+
