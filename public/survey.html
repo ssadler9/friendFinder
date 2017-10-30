@@ -123,7 +123,8 @@
   		<option value="4">4</option>
   		<option value="5">5 (Strongly Agree)</option>
 	</select>
-
+	<br>
+	<br>
 	<div>
 		<button type="button" id="submitButton" class="btn btn-primary btn-lg btn-block"><i class="fa fa-check" aria-hidden="true"></i>Submit</button>
 	</div>
@@ -156,29 +157,22 @@ $('#submitButton').on('click', function(event){
 		q9: $('#q9').val().trim(),
 		q10: $('#q10').val().trim()
 	}
-
 	console.log(profile);
-
 		$.post('/public/survey', profile)
 		.done(function(data) {
 			console.log(data);
+		
 
-		if (data === true) {
-			alert("Here's your friend")
-		} else {
-			alert("You have no friends")
-		};
-
-			$('#q1').val()
-			$('#q2').val()
-			$('#q3').val()
-			$('#q4').val()
-			$('#q5').val()
-			$('#q6').val()
-			$('#q7').val()
-			$('#q8').val()
-			$('#q9').val()
-			$('#q10').val()
+			$('#q1').val('')
+			$('#q2').val('')
+			$('#q3').val('')
+			$('#q4').val('')
+			$('#q5').val('')
+			$('#q6').val('')
+			$('#q7').val('')
+			$('#q8').val('')
+			$('#q9').val('')
+			$('#q10').val('')
 		})
 });
 
