@@ -8,6 +8,7 @@ var friends = require('../app/data/friends.js');
 var totalDifference = 0;
 
 
+
 // Arrays for answers
 var answers = [];
 

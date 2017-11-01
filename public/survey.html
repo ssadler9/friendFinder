@@ -10,6 +10,8 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 	<!-- font awesome -->
 	<script src="https://use.fontawesome.com/bf44c6b2d9.js"></script>
+	<!-- sweet alert -->
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 </head>
 <body>
@@ -143,6 +145,7 @@
 </div>
 
 <script type="text/javascript">
+
 	
 $('#submitButton').on('click', function(event){
 	event.preventDefault();
@@ -161,7 +164,7 @@ $('#submitButton').on('click', function(event){
 	console.log(profile);
 		$.post('/public/survey', profile)
 		.done(function(data) {
-			alert(data.result);
+			swal(data.result);
 		})
 });
 
