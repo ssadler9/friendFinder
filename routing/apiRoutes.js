@@ -1,22 +1,22 @@
- // Dependencies
-var express = require('express');
-var bodyParser = require('body-parser');
-var app = express();
-var PORT = process.env.PORT || 3000;
+//  // Dependencies
+// var express = require('express');
+// var bodyParser = require('body-parser');
+// var app = express();
+// var PORT = process.env.PORT || 3000;
 var path = require('path');
-var friends = require('../app/data/friends.js');
-// var answers = require('./htmlRoutes.js');
-console.log(friends);
+// var friends = require('../app/data/friends.js');
+// // var answers = require('./htmlRoutes.js');
+// console.log(friends);
 
 
-// Arrays for answers
-var friend = [];
+// // Arrays for answers
+// var friend = [];
 
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
+// app.use(bodyParser.urlencoded({ extended: false }));
+// app.use(bodyParser.json());
 
 
-
+module.exports = function(app) {
 // Routing
 app.get("/api", function(req, res){
 	res.sendFile(path.join(__dirname, '../app/data/friends.js'))
@@ -33,10 +33,12 @@ app.post("/api", function (req, res){
 	console.log(friend);
 	res.end();
 });
+
+}
 // Match that with the friends from app/data/friends.js
 // Display information in Module
 
 // App listening
-app.listen(PORT, function(){
-	console.log("App is listening on POT " + PORT);
-});
+// app.listen(PORT, function(){
+// 	console.log("App is listening on POT " + PORT);
+// });

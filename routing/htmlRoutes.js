@@ -1,45 +1,49 @@
-// Dependencies
-var express = require('express');
-var bodyParser = require('body-parser');
-var app = express();
-var PORT = process.env.PORT || 3000;
+// // Dependencies
+// var express = require('express');
+// var bodyParser = require('body-parser');
+// var app = express();
+// var PORT = process.env.PORT || 3000;
 var path = require('path');
 var friends = require('../app/data/friends.js');
-var totalDifference = 0;
+// var totalDifference = 0;
 
 
+	// Arrays for answers
+		var answers = [];
 
-// Arrays for answers
-var answers = [];
 
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
+// app.use(bodyParser.urlencoded({ extended: false }));
+// app.use(bodyParser.json());
+
+module.exports = function(app) {
 
 
 // Routing
-app.get("/", function(req, res){
-	res.sendFile(path.join(__dirname, '../public/home.html'))
-});
-// Routing
-app.get("/survey", function(req, res){
-	res.sendFile(path.join(__dirname, '../public/survey.html'))
-});
+	app.get("/", function(req, res){
+		res.sendFile(path.join(__dirname, '../public/home.html'))
+	});
+	// Routing
+	app.get("/survey", function(req, res){
+		res.sendFile(path.join(__dirname, '../public/survey.html'))
+	});
 
-// Need to store the answers from /public/survery into answers array
-app.post("/public/survey", function (req, res){
-	var friend = req.body;
-	answers.push(friend);
-	var theirFriend = comparison();
-	// console.log(answers);
-	res.json({ result: theirFriend });
-});
+	// Need to store the answers from /public/survery into answers array
+	app.post("/public/survey", function (req, res){
+		var friend = req.body;
+		answers.push(friend);
+		var theirFriend = comparison();
+		// console.log(answers);
+		res.json({ result: theirFriend });
+	});
+
+}
 // Match that with the friends from app/data/friends.js
 // Display information in Module
 
 // App listening
-app.listen(PORT, function(){
-	console.log("App is listening on POT " + PORT);
-});
+// app.listen(PORT, function(){
+// 	console.log("App is listening on POT " + PORT);
+// });
 
 function comparison(){
 	// console.log(answers);
